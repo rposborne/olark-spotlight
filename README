@@ -1,0 +1,49 @@
+## Spotlight Extension for Olark
+
+### Description
+
+The Spotlight Extension is a tool for operators to "Spotlight" an element on 
+the users browser.  It handles Scrolling to the DOM element and pulses the element itself. 
+All JS and Styling are contained within the olark-spotlight.js file to allow for easy "drop-in".
+
+
+### Requirments
+	
+  1. jQuery 1.3.2 and up
+
+### Getting Started
+
+  1. download the source code for this project
+  2. open `conf/common.js` and set `conf.system.olark_key` to your own Olark Key (available in your [dashboard](http://www.olark.com/dashboard))
+  3. open `tests/index.html` in your browser
+
+If you are testing in Safari, you will need to run the local server to make cookies work properly:
+
+    $ bin/olark-devserver
+
+Then you can access demo.html from [http://localhost:9090/tests/demo.html](http://localhost:9090/tests/demo.html)
+
+### Configuring your HTML
+
+	For Spotlight to work you must have "olark-spotlight" clases on your site. 
+	These classes must then inturn have a uniqueID, this can be number or a phrase (Phrase lowers the learning curve for your operators)
+	
+	<h2 class = 'olark-spotlight' id="title" >Olark Spotlight Effect Demonstration from BurningPony.com</h2>
+
+	There can be an unlimted number of these classes on your page. 
+	
+### Using
+
+	!spot - Provides a list of avaiable elements that an operator can highlight. 
+	!spot uniqueID - will scroll user to #uniqueID element and pulse the opacity of the #uniqueID element.
+	
+### Files
+
+  * **conf/common.js**: common configuration for testing
+  * **lib/javascript/olark-spotlight.js**: the full HelloWorld extension
+  * **tests/index.html**: sample landing page with the Olark chatbox + Spotlight extension
+  * **bin/olark-devserver**: local server for developing in certain browsers (like Safari)
+
+### License
+
+Olark-Spotlight is distributed under the MIT License
