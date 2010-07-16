@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+if __name__ == '__main__':
+
+    import os
+    import BaseHTTPServer
+    import SimpleHTTPServer
+
+    # switch to the project path so that the server serves from that root
+    project_path = os.path.join(os.path.dirname(__file__), '..')
+    os.chdir(project_path)
+
+    # set up the server
+    server_class = BaseHTTPServer.HTTPServer
+    handler_class = SimpleHTTPServer.SimpleHTTPRequestHandler
+    server_host = ''
+    server_port = 9090
+    httpd = server_class((server_host, server_port), handler_class)
+
+    # start the server
+    browser_server_host = server_host or 'localhost'
+
+    print "Olark Developer Server (running for '%s')" % os.path.abspath(project_path)
+    print "visit 'http://%s:%s/tests' in your browser" % (browser_server_host, server_port)
+    print "[ctrl+c to quit]"
+
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print "\nquitting Olark Developer Server"

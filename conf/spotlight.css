@@ -1,0 +1,33 @@
+/* @override 
+	http://static.olark.com/themes/base/theme.css
+	http://localhost:8888/olark-spotlight/conf/spotlight.css
+*/
+
+body {
+	background: black;
+	color: white;
+	font-family: 'georgia';
+	text-align: center;
+}
+.spotlightWrapper {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* not important */
+
+.spotlightWrapper ul {
+	list-style-type: none;
+	/* 
+
+remove the default style for list items (the circles) */ 
+				margin: 0px;
+	/* remove default margin */
+				padding: 0px;
+.clear {
+	clear: both;
+}
+
+/* to clear the float after the last item */
+
